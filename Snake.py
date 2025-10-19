@@ -32,7 +32,7 @@ def message(msg, color):
    dis.blit(mesg, [dis_width / 6, dis_height / 3])
 
 def your_score(score):
-   value - score_font.render("Счетчик: " + str(score), True, yellow)
+   value = score_font.render("Счетчик: " + str(score), True, yellow)
    dis.blit(value, [0,0])
  
 def gameLoop():
@@ -114,3 +114,4 @@ def gameLoop():
    quit()
  
 gameLoop()
+
