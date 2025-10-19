@@ -30,7 +30,10 @@ def our_snake(snake_block, snake_list):
 def message(msg, color):
    mesg = font_style.render(msg, True, color)
    dis.blit(mesg, [dis_width / 6, dis_height / 3])
- 
+
+def your_score(score):
+   value - score_font.render("Счетчик: " + str(score), True, yellow)
+   dis.blit(value, [0,0])
  
 def gameLoop():
    game_over = False
@@ -100,6 +103,12 @@ def gameLoop():
            foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
            foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
            Length_of_snake += 1
+           score +=1
+
+      if bonus_active and x1 == bonus_x and y1 == bonus_y:
+           current_speed, score == apply_bonus(bonus_type, current_speed, score)
+           bonus_active = False
+           bonus_duration = current_time + 5000 #Бонус на 5 секунд
        clock.tick(snake_speed)
    pygame.quit()
    quit()
